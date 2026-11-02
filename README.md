@@ -79,6 +79,74 @@ The password for the next level is stored in the only human-readable file in the
 **Thought Process**
 1. Navigated to the `inhere` directory.
 2. Used `file ./*` to identify the data types of all files, as they were mixed and visually indistinguishable.
-3. Found the only ASCII text file among the unknown data files.
+3. Found the only human-readable file among the unknown data files.
 4. Extracted the password using the `cat` command on the identified text file.
 </details>
+
+<details>
+<summary><b>Level 5 -> Level 6</b></summary>
+
+**Goal**
+The password for the next level is stored in a file somewhere under the inhere directory and has all of the following properties:
+
+- human-readable
+- 1033 bytes in size
+- not executable 
+
+**Commands Used**
+* `cd`
+* `ls -la`
+* `find`
+* `cat`
+
+**Thought Process**
+1. Navigated to the `inhere` directory.
+2. Used `ls -la` to identify how many files or directory there are in inhere directory.
+3. Found the files that are exactly 1033 bytes in size using `find . -type f -size 1033c` among the all files under inhere directory.
+4. Extracted the password using the `cat` command on the identified text file.
+
+**Key Concepts**
+
+- `find`: Searches for files and directories.
+- `-type f`: Matches regular files.
+- `-size 1033c`: Matches files exactly 1033 bytes in size.
+</details>
+
+<details>
+<summary><b>Level 6 -> Level 7</b></summary>
+
+**Goal**
+The password for the next level is stored somewhere on the server and has all of the following properties:
+- owned by user bandit7
+- owned by group bandit6
+- 33 bytes in size
+
+**Commands Used**
+* `find`
+* `cat`
+
+**Thought Process**
+1. Used the `find` command starting from the root directory (`/`) to search the entire server.
+2. Applied specific options to match the properties: `-user bandit7` for the owner, `-group bandit6` for the group, and `-size 33c` for the exact 33-byte size.
+3. Added `2>/dev/null` at the end of the command to hide "Permission denied" error messages.
+4. Extracted the password by reading the found file path using the `cat` command.
+</details>
+
+<details>
+<summary><b>Level 7 -> Level 8</b></summary>
+
+**Goal**
+The password for the next level is stored in the file data.txt next to the word millionth
+
+**Commands Used**
+*  `grep`
+
+**Thought Process**
+1. Used the `grep` command to find specific strings in a file
+2. Applied specific options to match the properties: `-Eoi` for matching neiboring words, only matching that I target and catches all cases such as lowercase and uppercase.
+3. Used the regular expression `"millionth\s+\S+"` to precisely extract the password. `millionth` targets the specific keyword, `\s+` matches one or more spaces, and `\S+` captures the subsequent consecutive non-space characters.
+</details>
+
+
+
+
