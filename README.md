@@ -147,6 +147,111 @@ The password for the next level is stored in the file data.txt next to the word 
 3. Used the regular expression `"millionth\s+\S+"` to precisely extract the password. `millionth` targets the specific keyword, `\s+` matches one or more spaces, and `\S+` captures the subsequent consecutive non-space characters.
 </details>
 
+<details>
+<summary><b>Level 8 -> Level 9</b></summary>
+
+**Goal**
+The password for the next level is stored in the file data.txt and is the only line of text that occurs only once
+
+**Commands Used**
+*  `sort`
+*  `uniq`
+
+**Thought Process**
+1. Used the `sort` command to order based on alphabet
+2. Pass the result of the left side using  `|` to right side and show the result after appling the command of right side
+3. Extracted the password by reading the line using `uniq -u`
+
+**Key Concepts**
+
+- `sort`: Orders by alphabet
+- `uniq -u`: show only the line that is not duplicated
+</details>
+
+<details>
+<summary><b>Level 9 -> Level 10</b></summary>
+
+**Goal**
+The password for the next level is stored in the file data.txt in one of the few human-readable strings, preceded by several ‘=’ characters.
+
+**Commands Used**
+*  `string`
+*  `grep`
+
+**Thought Process**
+1. Used the `string` command to exctracted the strings that only human-readable
+2. Pass the result of the left side using  `|` to right side and show the result after appling the command of right side
+3. Extracted the strings that preceded by several '=' characters using grep
+
+**Key Concepts**
+
+- `string`: show the strings that only human-readable
+</details>
+
+<details>
+<summary><b>Level 10 -> Level 11</b></summary>
+
+**Goal**
+The password for the next level is stored in the file data.txt, which contains base64 encoded data
+
+**Commands Used**
+*  `base64`
+*  `--decode`
+
+**Thought Process**
+1. Identified that the content in `data.txt` is encoded in Base64 format.
+2. Used the `base64` command with the `--decode` option to decode the text back into its original human-readable form.
+3. Executed `base64 --decode data.txt` to reveal the password directly.
+
+**Key Concepts**
+- `base64`: A command used to encode or decode data using the Base64 encoding scheme.
+- `--decode`: An option that tells the `base64` command to decode the data rather than encode it.
+</details>
+
+<details>
+<summary><b>Level 11 -> Level 12</b></summary>
+
+**Goal**
+The password for the next level is stored in the file data.txt, where all lowercase (a-z) and uppercase (A-Z) letters have been rotated by 13 positions
+
+**Commands Used**
+-  `tr`
+-  `cat`
+
+**Thought Process**
+1. Identified that the text is encoded using the ROT13 cipher, which shifts letters by 13 positions.
+2. Used the `tr` (translate) command to map and replace each letter with the letter 13 positions ahead/behind it in the alphabet.
+3. Executed `cat data.txt | tr 'a-zA-Z' 'n-za-mN-ZA-M'` to decode the text and reveal the original password.
+
+**Key Concepts**
+- `tr`: A command-line utility for translating or deleting characters.
+</details>
 
 
+<details>
+<summary><b>Level 12 -> Level 13</b></summary>
+
+**Goal**
+The password for the next level is stored in the file data.txt, which is a hexdump of a file that has been repeatedly compressed. For this level it may be useful to create a directory under /tmp in which you can work. Use mkdir with a hard to guess directory name. Or better, use the command “mktemp -d”. Then copy the datafile using cp, and rename it using mv (read the manpages!)
+
+**Commands Used**
+- `mktemp -d`, `cp`, `cd`, `mv`
+- `xxd`
+- `file`
+- `gzip`, `bzip2`, `tar`
+
+**Thought Process**
+1. Created a temporary working directory in `/tmp` using `mktemp -d` and copied `data.txt` into it from the home directory.
+2. Reversed the hexdump back into a binary file using `xxd -r data.txt > data.bin`.
+3. Used the `file` command to determine the actual file type of the binary file.
+4. Renamed the file with the appropriate extension (`.gz`, `.bz2`, or `.tar`) using the `mv` command so that the decompression tools could recognize it.
+5. Decompressed the file using `gzip -d`, `bzip2 -d`, or `tar -xf` based on the file type.
+6. Repeated the cycle of `file` -> `mv` -> `decompress` several times until the final uncompressed ASCII text file containing the password was revealed.
+
+**Key Concepts**
+- `mktemp -d`: Creates a secure, temporary directory.
+- `xxd -r`: Reverses a hexdump, converting hexadecimal text back into binary data.
+- `file`: Determines a file's type by examining its content (magic bytes), not just its extension.
+- **Compression Tools**: Linux uses various compression formats. `.gz` is extracted with `gzip -d`, `.bz2` with `bzip2 -d`, and `.tar` (an archive) with `tar -xf`.
+</details>
 
