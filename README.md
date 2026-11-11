@@ -9,6 +9,68 @@ Through these challenges, I practiced Linux command-line operations, file permis
 
 Each write-up includes the commands I used, my thought process, troubleshooting steps, and key concepts I learned.
 
+## Skills & Technologies
+
+| Category | Skills & Technologies |
+|---|---|
+| Linux | Command Line, File Permissions, Bash |
+| Networking | TCP/IP, Ports, Netcat, Nmap |
+| Security | SSH, SSL/TLS, Setuid, Brute Force |
+| Automation | Shell Scripting, Cron Jobs |
+| Version Control | Git, Branches, Commit History |
+
+## Quick Navigation
+
+<details>
+<summary><b>Browse All Levels (0–33)</b></summary>
+
+**Levels 0–10**
+
+- [Level 0 → 1](#level-0-1)
+- [Level 1 → 2](#level-1-2)
+- [Level 2 → 3](#level-2-3)
+- [Level 3 → 4](#level-3-4)
+- [Level 4 → 5](#level-4-5)
+- [Level 5 → 6](#level-5-6)
+- [Level 6 → 7](#level-6-7)
+- [Level 7 → 8](#level-7-8)
+- [Level 8 → 9](#level-8-9)
+- [Level 9 → 10](#level-9-10)
+
+**Levels 10–20**
+
+- [Level 10 → 11](#level-10-11)
+- [Level 11 → 12](#level-11-12)
+- [Level 12 → 13](#level-12-13)
+- [Level 13 → 14](#level-13-14)
+- [Level 14 → 15](#level-14-15)
+- [Level 15 → 16](#level-15-16)
+- [Level 16 → 17](#level-16-17)
+- [Level 17 → 18](#level-17-18)
+- [Level 18 → 19](#level-18-19)
+- [Level 19 → 20](#level-19-20)
+
+**Levels 20–33**
+
+- [Level 20 → 21](#level-20-21)
+- [Level 21 → 22](#level-21-22)
+- [Level 22 → 23](#level-22-23)
+- [Level 23 → 24](#level-23-24)
+- [Level 24 → 25](#level-24-25)
+- [Level 25 → 26](#level-25-26)
+- [Level 26 → 27](#level-26-27)
+- [Level 27 → 28](#level-27-28)
+- [Level 28 → 29](#level-28-29)
+- [Level 29 → 30](#level-29-30)
+- [Level 30 → 31](#level-30-31)
+- [Level 31 → 32](#level-31-32)
+- [Level 32 → 33](#level-32-33)
+
+</details>
+
+---
+
+<a name="level-0-1"></a>
 <details>
 <summary><b>Level 0 -> Level 1</b></summary>
 
@@ -24,6 +86,7 @@ The password for the next level is stored in a file called readme located in the
 2. Read the file contents using `cat readme` to extract the password.
 </details>
 
+<a name="level-1-2"></a>
 <details>
 <summary><b>Level 1 -> Level 2</b></summary>
 
@@ -39,6 +102,7 @@ The password for the next level is stored in a file called - located in the home
 2. Specified the current directory path (`./-`) to read it with `cat`, preventing the terminal from treating `-` as a command option flag.
 </details>
 
+<a name="level-2-3"></a>
 <details>
 <summary><b>Level 2 -> Level 3</b></summary>
 
@@ -54,6 +118,7 @@ The password for the next level is stored in a file called --spaces in this file
 2. Extracted the password by adding `./` and enclosing the file name in quotes to handle the spaces: `cat "./--spaces in this filename--"`.
 </details>
 
+<a name="level-3-4"></a>
 <details>
 <summary><b>Level 3 -> Level 4</b></summary>
 
@@ -71,6 +136,7 @@ The password for the next level is stored in a hidden file in the inhere directo
 3. Read the text inside the hidden file with `cat ./...Hiding-From-You`.
 </details>
 
+<a name="level-4-5"></a>
 <details>
 <summary><b>Level 4 -> Level 5</b></summary>
 
@@ -90,6 +156,7 @@ The password for the next level is stored in the only human-readable file in the
 4. Extracted the password using the `cat` command on the identified text file.
 </details>
 
+<a name="level-5-6"></a>
 <details>
 <summary><b>Level 5 -> Level 6</b></summary>
 
@@ -119,6 +186,7 @@ The password for the next level is stored in a file somewhere under the inhere d
 - `-size 1033c`: Matches files exactly 1033 bytes in size.
 </details>
 
+<a name="level-6-7"></a>
 <details>
 <summary><b>Level 6 -> Level 7</b></summary>
 
@@ -139,6 +207,7 @@ The password for the next level is stored somewhere on the server and has all of
 4. Extracted the password by reading the found file path using the `cat` command.
 </details>
 
+<a name="level-7-8"></a>
 <details>
 <summary><b>Level 7 -> Level 8</b></summary>
 
@@ -154,6 +223,7 @@ The password for the next level is stored in the file data.txt next to the word 
 3. Used the regular expression `"millionth\s+\S+"` to find the word `millionth` and the non-space characters immediately following it.
 </details>
 
+<a name="level-8-9"></a>
 <details>
 <summary><b>Level 8 -> Level 9</b></summary>
 
@@ -175,6 +245,7 @@ The password for the next level is stored in the file data.txt and is the only l
 - `uniq -u`: Displays lines that occur only once.
 </details>
 
+<a name="level-9-10"></a>
 <details>
 <summary><b>Level 9 -> Level 10</b></summary>
 
@@ -195,6 +266,7 @@ The password for the next level is stored in the file data.txt in one of the few
 - `strings`: Extracts readable text strings from binary files.
 </details>
 
+<a name="level-10-11"></a>
 <details>
 <summary><b>Level 10 -> Level 11</b></summary>
 
@@ -215,6 +287,7 @@ The password for the next level is stored in the file data.txt, which contains b
 - `--decode`: An option that tells the `base64` command to decode the data rather than encode it.
 </details>
 
+<a name="level-11-12"></a>
 <details>
 <summary><b>Level 11 -> Level 12</b></summary>
 
@@ -234,7 +307,7 @@ The password for the next level is stored in the file data.txt, where all lowerc
 - `tr`: A command-line utility for translating or deleting characters.
 </details>
 
-
+<a name="level-12-13"></a>
 <details>
 <summary><b>Level 12 -> Level 13</b></summary>
 
@@ -262,6 +335,7 @@ The password for the next level is stored in the file data.txt, which is a hexdu
 - **Compression Tools**: Linux uses various compression formats. `.gz` is extracted with `gzip -d`, `.bz2` with `bzip2 -d`, and `.tar` (an archive) with `tar -xf`.
 </details>
 
+<a name="level-13-14"></a>
 <details>
 <summary><b>Level 13 -> Level 14</b></summary>
 
@@ -333,6 +407,7 @@ Make sure to read the error messages as they are informative.
 This level helped me understand how SSH private key authentication works and how to transfer files between a remote server and my local machine. I also learned the importance of file permissions and how to troubleshoot common SSH connection errors.
 </details>
 
+<a name="level-14-15"></a>
 <details>
 <summary><b>Level 14 -> Level 15</b></summary>
 
@@ -378,7 +453,7 @@ The password for the next level can be retrieved by submitting the password of t
 This level helped me understand how to use Netcat to communicate with a service through a specific port. I also learned that a successful network connection does not always display a message, and that I can send input directly through the terminal.
 </details>
 
-
+<a name="level-15-16"></a>
 <details>
 <summary><b>Level 15 -> Level 16</b></summary>
 
@@ -430,6 +505,7 @@ This level helped me understand the difference between a regular network connect
 
 </details>
 
+<a name="level-16-17"></a>
 <details>
 <summary><b>Level 16 -> Level 17</b></summary>
 
@@ -545,7 +621,7 @@ I also learned how to use OpenSSL to interact with an encrypted service, how to 
 
 </details>
 
-
+<a name="level-17-18"></a>
 <details>
 <summary><b>Level 17 -> Level 18</b></summary>
 
@@ -593,6 +669,7 @@ This was a useful way to find information without manually checking every line.
 
 </details>
 
+<a name="level-18-19"></a>
 <details>
 <summary><b>Level 18 -> Level 19</b></summary>
 
@@ -651,6 +728,7 @@ This was especially useful when an interactive login was not possible.
 
 </details>
 
+<a name="level-19-20"></a>
 <details>
 <summary><b>Level 19 -> Level 20</b></summary>
 
@@ -713,6 +791,7 @@ I also learned that checking a program's usage before running it can make it eas
 
 </details>
 
+<a name="level-20-21"></a>
 <details>
 <summary><b>Level 20 -> Level 21</b></summary>
 
@@ -785,6 +864,7 @@ This level also helped me understand how setuid binaries can interact with netwo
 
 </details>
 
+<a name="level-21-22"></a>
 <details>
 <summary><b>Level 21 -> Level 22</b></summary>
 
@@ -858,6 +938,7 @@ I also learned how to inspect cron configurations and understand why manually ex
 
 </details>
 
+<a name="level-22-23"></a>
 <details>
 <summary><b>Level 22 -> Level 23</b></summary>
 
@@ -940,7 +1021,7 @@ I also learned that reading a shell script carefully can reveal how a program wo
 
 </details>
 
-
+<a name="level-23-24"></a>
 <details>
 <summary><b>Level 23 -> Level 24</b></summary>
 
@@ -1050,6 +1131,7 @@ I also got a better understanding of Linux file ownership, permissions, and basi
 
 </details>
 
+<a name="level-24-25"></a>
 <details>
 <summary><b>Level 24 -> Level 25</b></summary>
 
@@ -1141,6 +1223,7 @@ Most importantly, I learned how a simple script can automate a task that would t
 
 </details>
 
+<a name="level-25-26"></a>
 <details>
 <summary><b>Level 25 -> Level 26</b></summary>
 
@@ -1274,6 +1357,7 @@ Most importantly, I learned that programs like `more` and Vim can provide a way 
 
 </details>
 
+<a name="level-26-27"></a>
 <details>
 <summary><b>Level 26 -> Level 27</b></summary>
 
@@ -1344,9 +1428,8 @@ This level showed me that a restricted shell does not always prevent access to o
 
 </details>
 
-
+<a name="level-27-28"></a>
 <details>
-
 <summary><b>Level 27 -> Level 28</b></summary>
 
 ### Goal
@@ -1416,6 +1499,7 @@ This level introduced me to cloning and inspecting a remote Git repository. I al
 
 </details>
 
+<a name="level-28-29"></a>
 <details>
 <summary><b>Level 28 -> Level 29</b></summary>
 
@@ -1499,6 +1583,7 @@ Even if a password is replaced or deleted, it may still be accessible through pr
 In real-world development, exposed passwords and API keys should be revoked and replaced, not simply deleted from the latest commit.
 </details>
 
+<a name="level-29-30"></a>
 <details>
 <summary><b>Level 29 -> Level 30</b></summary>
 
@@ -1594,6 +1679,7 @@ This level showed me that checking only the master branch is not always enough. 
 Understanding Git branches is useful not only for development but also for security investigations.
 </details>
 
+<a name="level-30-31"></a>
 <details>
 <summary><b>Level 30 -> Level 31</b></summary>
 
@@ -1673,6 +1759,7 @@ This level showed me that useful information is not always stored in the latest 
 I learned to check Git tags when investigating a repository, rather than focusing only on the current files.
 </details>
 
+<a name="level-31-32"></a>
 <details>
 <summary><b>Level 31 -> Level 32</b></summary>
 
@@ -1772,6 +1859,7 @@ This level introduced me to pushing files to a remote Git repository and underst
 I also learned that a failed push does not always mean the task failed. In this challenge, the server validated my file, displayed the next password, and then intentionally rejected the push.
 </details>
 
+<a name="level-32-33"></a>
 <details>
 <summary><b>Level 32 -> Level 33</b></summary>
 
@@ -1802,4 +1890,3 @@ Escape from the Uppercase Shell and retrieve the password for the next level.
 
 This level taught me how shell behavior can affect command execution and how shell variables can be used to escape a restricted environment.
 </details>
-
